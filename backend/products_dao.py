@@ -25,7 +25,7 @@ def get_all_products(connection):
     except connector.Error as err:
         print(f"Error: {err}")
 
-        return response
+    return response
 
 
 def insert_product(connection, product):
@@ -50,9 +50,5 @@ def delete_product(connection, product_id):
 
 if __name__ == '__main__':
     connection = get_sql_connection()
-    print(insert_product(connection, {
-        'name': 'banana',
-        'uom_id': '2',
-        'price_per_unit': '25'
-    }))
+    print(get_all_products(connection))
 
